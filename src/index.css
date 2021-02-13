@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.container {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--background-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* LIGHT MODE */
+
+html[data-theme="light"] {
+  --color: rgb(1, 0, 1);
+  --bgHomeButton: rgb(1, 0, 1);
+  --colorHomeButton: rgb(255, 255, 255);
+  --background-color: rgb(255, 255, 255);
+  --colorHeaderHome: rgb(1, 0, 1);
+  --color-nav: rgb(255, 255, 255);
+  --background-nav: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 20%,
+    rgba(253, 29, 29, 1) 110%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  --background-switch: rgb(255, 255, 255);
+  --color-header: rgb(255, 255, 255);
+  --background-header: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 20%,
+    rgba(253, 29, 29, 1) 110%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  --background-footer: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 20%,
+    rgba(253, 29, 29, 1) 110%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  --color-button: #72f;
+  --background-button: rgb(255, 255, 255);
+  --background-button-hover: #72f linear-gradient(145deg, #72f, #c1b);
+  --color-button-hover: rgb(255, 255, 255);
+}
+
+/* DARK MODE */
+
+html[data-theme="dark"] {
+  --color: rgb(255, 255, 255);
+  --color-nav: rgb(255, 255, 255);
+  --color-header: linear-gradient(145deg, #72f, #c1b);
+  --colorHeaderHome: linear-gradient(145deg, #72f, #c1b);
+  --background-switch: linear-gradient(145deg, #72f, #c1b);
+  --background-color: rgba(1, 0, 1, 0.99);
+  --background-nav: rgb(1, 0, 1);
+  --background-header: rgb(1, 0, 1);
+  --background-footer: rgb(1, 0, 1);
+  --color-button: rgb(255, 255, 255);
+  --background-button: #72f linear-gradient(145deg, #72f, #c1b);
+  --background-button-hover: rgb(255, 255, 255);
+  --color-button-hover: #72f;
+  --bgHomeButton: rgb(255, 255, 255);
+  --colorHomeButton: rgb(1, 0, 1);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  color: var(--color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+/* .grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-top: 3rem;
+}
+
+.card {
+  margin: 1rem;
+  flex-basis: 45%;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
+
+.card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+} */
+
+.logo {
+  height: 1em;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}

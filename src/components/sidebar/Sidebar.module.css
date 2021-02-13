@@ -1,0 +1,46 @@
+.Sidebar {
+  display: flex;
+  padding: 0 16px;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(20, 20, 20, 0.9);
+}
+
+.Sidebar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.Sidebar ul li {
+  font-size: 2rem;
+  margin: 24px auto;
+  color: white;
+}
+
+.Sidebar .closeIcon {
+  z-index: 1001;
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  cursor: pointer;
+}
+
+.closed {
+  width: 0;
+}
+.closed ul,
+.closed .closeIcon {
+  display: none;
+}

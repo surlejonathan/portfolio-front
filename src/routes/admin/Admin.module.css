@@ -1,0 +1,50 @@
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.formLogin input,
+.formLogin button,
+.formLogin .fileUploadLabel,
+.formLogin textarea {
+  font-size: 1.3rem;
+  margin: 16px 0;
+  padding: 16px;
+  border-radius: 10px;
+  outline: none;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.formLogin textarea {
+  height: 250px;
+  resize: none;
+}
+
+.formLogin input:focus,
+.formLogin textarea {
+  border-color: black;
+}
+
+.formLogin input[type="file"] {
+  display: none;
+}
+
+.formLogin button {
+  color: var(--color-button);
+  border-color: #72f;
+  background: var(--background-button);
+  transition: all 0.3s ease-in-out;
+}
+
+.formLogin .uploadButton {
+  width: 200px;
+  justify-self: center;
+  margin: auto;
+}
+.formLogin button:hover {
+  color: var(--color-button-hover);
+  background: var(--background-button-hover);
+}
