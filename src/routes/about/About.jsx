@@ -17,8 +17,19 @@ export default function About() {
         <meta property='og:image' content='path/to/image.jpg' />
       </MetaTags>
       <h1>A propos de moi</h1>
-      <div className={aboutStyles.card}>
-        <img src={Portrait} />
+      <div class={aboutStyles.grid}>
+        <div className={aboutStyles.portrait}>
+          <img src={Portrait} />
+        </div>
+        <div style={{ flex: "1" }}>
+          <p>Bienvenue sur mon portfolio !</p>
+          <p>
+            Dans le cadre d'une reconversion professionnelle, j'intègre en
+            Septembre 2020, la formidable aventure proposée par la Wild Code
+            School afin de découvrir et maîtriser les rudiments du métier de
+            développeur.
+          </p>
+        </div>
       </div>
     </div>
   );

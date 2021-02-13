@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import darkModeContext from "../../contexts/darkModeContext";
 import { Link } from "react-router-dom";
 import MetaTags from "react-meta-tags";
 import Navbar from "../../components/navbar/Navbar";
 import themeLight from "../../images/ink.mp4";
 import image from "../../images/imgDark5-b.jpg";
+import { SiGithub, SiLinkedin } from "react-icons/si";
+
 import homeStyles from "../home/Home.module.css";
 
 export default function Home() {
-  let theme = localStorage.getItem("theme");
+  const { dark } = useContext(darkModeContext);
 
-  useState(() => {
-    return theme;
-  });
   return (
     <div className='main'>
       <MetaTags>
@@ -34,6 +34,28 @@ export default function Home() {
             <p className={homeStyles.description}>
               Développeur Web Fullstack JS
             </p>
+            <div className={homeStyles.socialMedia}>
+              <a
+                href='https://github.com/surlejonathan'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <SiGithub
+                  size='2rem'
+                  className={`${homeStyles.social} ${homeStyles.gitHub}`}
+                />
+              </a>
+              <a
+                href='https://www.linkedin.com/in/jonathan-surle/'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <SiLinkedin
+                  size='2rem'
+                  className={`${homeStyles.social} ${homeStyles.linkedIn}`}
+                />
+              </a>
+            </div>
           </header>
           <div className={homeStyles.buttonContainer}>
             <Link to='/about'>
@@ -45,13 +67,13 @@ export default function Home() {
           </div>
         </div>
         <div className={homeStyles.right}>
-          {theme === "light" && (
+          {!dark && (
             <video className={homeStyles.video} autoPlay loop muted>
               <source src={themeLight} type='video/mp4' />
             </video>
           )}
 
-          {theme === "dark" && <img src={image} />}
+          {dark && <img src={image} />}
         </div>
       </div>
     </div>

@@ -97,6 +97,16 @@
   font-style: italic;
 }
 
+.socialMedia {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+.socialMedia > a {
+  margin: 0 10px;
+}
+
 .buttonContainer {
   display: flex;
   flex-direction: column;
@@ -121,9 +131,26 @@
   width: 100%;
 }
 
+.social {
+  color: var(--bgHomeButton);
+}
+
+.social:hover {
+  color: var(--bgHomeButton-hover);
+  background: var(--colorHomeButton-hover);
+}
+
+.gitHub {
+  border-radius: 100%;
+}
+
+.linkedIn {
+  border-radius: 3px;
+}
+
 .Home button:hover {
-  color: var(--color-button-hover);
-  background: var(--background-button-hover);
+  color: var(--colorHomeButton-hover);
+  background: var(--bgHomeButton-hover);
 }
 
 @media (max-width: 894px) {

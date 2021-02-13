@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import darkModeContext from "../../contexts/darkModeContext";
 import darkModeStyles from "./DarkModeToggle.module.css";
 
 const DarkModeToggle = ({ onChange }) => {
-  const [checked, setChecked] = useState(
-    localStorage.getItem("theme") === "dark" ? true : false
-  );
+  const { dark, setDark } = useContext(darkModeContext);
 
   useEffect(() => {
     if (localStorage.getItem("theme") === null) {
@@ -16,18 +15,18 @@ const DarkModeToggle = ({ onChange }) => {
   }, []);
 
   const toggleThemeChange = () => {
-    if (checked === false) {
+    if (!dark) {
       localStorage.setItem("theme", "dark");
       document
         .getElementsByTagName("HTML")[0]
         .setAttribute("data-theme", localStorage.getItem("theme"));
-      setChecked(true);
+      setDark(true);
     } else {
       localStorage.setItem("theme", "light");
       document
         .getElementsByTagName("HTML")[0]
         .setAttribute("data-theme", localStorage.getItem("theme"));
-      setChecked(false);
+      setDark(false);
     }
   };
 
@@ -36,7 +35,7 @@ const DarkModeToggle = ({ onChange }) => {
       <label className={darkModeStyles.switch}>
         <input
           type='checkbox'
-          defaultChecked={checked}
+          defaultChecked={dark}
           onChange={() => toggleThemeChange()}
         />
         <span className={`${darkModeStyles.slider} ${darkModeStyles.round}`} />
