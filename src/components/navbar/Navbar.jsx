@@ -37,8 +37,8 @@ const Navbar = ({ className, menuIcon, roleContainer }) => {
     <>
       <div className={`${navStyles.Navbar} ${className}`}>
         {!isPageWide && (
-          <nav className={navStyles.nav} onClick={closeSideNav}>
-            <ul className={navStyles.navItems}>
+          <nav onClick={closeSideNav}>
+            <ul>
               <li>
                 <Link to='/'>Accueil</Link>
               </li>
@@ -61,25 +61,24 @@ const Navbar = ({ className, menuIcon, roleContainer }) => {
             onClick={displaySideNav}
           />
         )}
-        {isPageWide && (
-          <Sidebar
-            onClose={closeSideNav}
-            className={open ? sidebarStyles.Sidebar : sidebarStyles.closed}
-          />
-        )}
-
-        {admin && (
-          <div className={`${navStyles.roleContainer} ${roleContainer}`}>
-            <p className={navStyles.role}>
-              {" "}
-              <GiImperialCrown size='1.6rem' /> Administrateur
-            </p>
-            <span className={navStyles.deconnect} onClick={handleLogOut}>
-              (Se déconnecter)
-            </span>
-          </div>
-        )}
       </div>
+      {admin && (
+        <div className={`${navStyles.roleContainer} ${roleContainer}`}>
+          <p className={navStyles.role}>
+            {" "}
+            <GiImperialCrown size='1.6rem' /> Administrateur
+          </p>
+          <span className={navStyles.deconnect} onClick={handleLogOut}>
+            (Se déconnecter)
+          </span>
+        </div>
+      )}
+      {isPageWide && (
+        <Sidebar
+          onClose={closeSideNav}
+          className={open ? sidebarStyles.Sidebar : sidebarStyles.closed}
+        />
+      )}
     </>
   );
 };

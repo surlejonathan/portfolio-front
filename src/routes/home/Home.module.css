@@ -2,7 +2,7 @@
   background: var(--background-color);
 }
 
-.Navbar ul,
+.Navbar nav ul li,
 .menuIcon {
   color: var(--color);
   font-size: 1rem;
@@ -10,6 +10,13 @@
   letter-spacing: 3px;
 }
 
+.Navbar nav ul li a:after {
+  background: var(--color);
+}
+
+.roleContainer {
+  background: var(--background);
+}
 .roleContainer > p,
 .roleContainer > span {
   color: var(--color);

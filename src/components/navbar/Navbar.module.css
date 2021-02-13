@@ -7,39 +7,57 @@
   width: 100%;
 }
 
-.nav {
-  flex: 1.5;
+.Navbar nav {
   height: 60px;
-  padding: 8px 16px;
+  padding: 0 16px;
   color: var(--color-nav);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+
   width: 100%;
   text-transform: uppercase;
 }
 
-.nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.Navbar nav ul {
+  display: table;
+
   list-style: none;
 }
 
-.nav ul li a {
+.Navbar nav ul li {
+  display: table-cell;
+  position: relative;
+}
+.Navbar nav ul li a {
   letter-spacing: 5px;
   font-size: 0.9rem;
   margin: 5px 15px;
+  display: inline-block;
+  position: relative;
+}
+
+.Navbar nav ul li a:after {
+  bottom: -5px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: var(--color-nav);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.Navbar nav ul li a:hover:after {
+  width: 100%;
+  left: 0;
 }
 
 .roleContainer {
-  flex: 1;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: flex-start;
-  margin-right: 24px;
+  background: var(--background-nav);
   width: 100%;
 }
 

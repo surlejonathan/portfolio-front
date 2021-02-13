@@ -6,8 +6,8 @@ import { IoClose } from "react-icons/io5";
 const Sidebar = ({ onClose, className }) => {
   return (
     <div className={className} onClick={onClose}>
-      <nav className={className}>
-        <ul className={className}>
+      <nav>
+        <ul>
           <li>
             <Link to='/'>Accueil</Link>
           </li>

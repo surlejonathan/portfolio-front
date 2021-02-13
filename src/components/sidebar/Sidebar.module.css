@@ -1,7 +1,7 @@
 .Sidebar {
   display: flex;
   padding: 0 16px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: fixed;
   height: 100vh;
@@ -10,10 +10,10 @@
   bottom: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(20, 20, 20, 0.9);
+  background-color: rgba(20, 20, 20, 0.985);
 }
 
-.Sidebar ul {
+.Sidebar nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,10 +23,12 @@
   margin: 0;
 }
 
-.Sidebar ul li {
-  font-size: 2rem;
+.Sidebar nav ul li a {
+  font-size: 1.8rem;
+  display: block;
   margin: 24px auto;
   color: white;
+  text-transform: uppercase;
 }
 
 .Sidebar .closeIcon {
