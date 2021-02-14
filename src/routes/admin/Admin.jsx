@@ -23,7 +23,6 @@ export default function Admin() {
       })
       .then((response) => {
         if (response.data) {
-          localStorage.setItem("admin", "true");
           setAdmin(true);
           history.push("/admin/dashboard");
         }

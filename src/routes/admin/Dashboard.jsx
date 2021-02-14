@@ -52,8 +52,6 @@ export default function Dashboard() {
     }
   };
 
-  console.log(imageSelected, projectPicture);
-
   return (
     <>
       <MetaTags>

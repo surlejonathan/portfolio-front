@@ -18,7 +18,6 @@ const Navbar = ({ className, menuIcon, roleContainer }) => {
   let history = useHistory();
 
   const handleLogOut = () => {
-    localStorage.removeItem("admin");
     setAdmin(false);
     history.push("/");
   };

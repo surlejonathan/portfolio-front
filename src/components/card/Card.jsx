@@ -1,3 +1,5 @@
+import React, { useContext } from "react";
+import adminContext from "../../contexts/adminContext";
 import { Link } from "react-router-dom";
 import cardStyles from "./Card.module.css";
 import { motion } from "framer-motion";
@@ -11,6 +13,7 @@ const Card = ({
   description,
   onClick,
 }) => {
+  const { admin } = useContext(adminContext);
   return (
     <div>
       <motion.div
@@ -30,9 +33,7 @@ const Card = ({
         <Link to={path}>
           <p className={cardStyles.cardLink}>En savoir plus &rarr;</p>
         </Link>
-        {localStorage.getItem("admin", "true") && (
-          <button onClick={onClick}>Supprimer</button>
-        )}
+        {admin && <button onClick={onClick}>Supprimer</button>}
       </motion.div>
     </div>
   );
