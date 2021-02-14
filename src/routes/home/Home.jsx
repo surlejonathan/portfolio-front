@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import MetaTags from "react-meta-tags";
 import Navbar from "../../components/navbar/Navbar";
 import themeLight from "../../images/ink.mp4";
-import image from "../../images/imgDark5-b.jpg";
+import image from "../../images/dark.jpg";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
 import homeStyles from "../home/Home.module.css";
@@ -68,7 +68,13 @@ export default function Home() {
         </div>
         <div className={homeStyles.right}>
           {!dark && (
-            <video className={homeStyles.video} autoPlay loop muted>
+            <video
+              className={homeStyles.video}
+              poster='../../images/ink.jpg'
+              autoPlay
+              loop
+              muted
+            >
               <source src={themeLight} type='video/mp4' />
             </video>
           )}
