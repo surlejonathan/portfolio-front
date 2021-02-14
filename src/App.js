@@ -10,6 +10,7 @@ import adminContext from "./contexts/adminContext";
 import Projects from "./routes/projects/Projects";
 import Contact from "./routes/contact/Contact";
 import darkModeContext from "./contexts/darkModeContext";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 export default function App() {
   const [admin, setAdmin] = useState(false);

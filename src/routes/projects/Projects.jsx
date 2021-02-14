@@ -5,17 +5,21 @@ import Card from "../../components/card/Card";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import MetaTags from "react-meta-tags";
+import Loader from "react-loader-spinner";
 import projectStyles from "../projects/Projects.module.css";
 
 export default function Projects() {
   let history = useHistory();
 
   const [projectList, setProjectList] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const getProjects = () => {
     axios
       .get(`${process.env.REACT_APP_URL}/api/project`)
       .then((response) => response.data)
       .then((data) => setProjectList(data))
+      .then(() => setLoading(false))
       .catch((err) => console.error(err));
   };
 
@@ -35,7 +39,8 @@ export default function Projects() {
   };
 
   useEffect(() => {
-    return getProjects();
+    setLoading(true);
+    getProjects();
   }, []);
 
   return (
@@ -49,7 +54,13 @@ export default function Projects() {
       <Navbar />
       <Header />
       <h1>Mes Projets</h1>
-      <div className={projectStyles.grid}>
+      <div
+        className={projectStyles.grid}
+        style={{ paddingTop: loading && "10%" }}
+      >
+        {loading && (
+          <Loader type='TailSpin' color='#72f' height={100} width={100} />
+        )}
         {projectList &&
           projectList.map((project, index) => (
             <Card
