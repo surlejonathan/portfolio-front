@@ -33,41 +33,28 @@ export default function About() {
         <div className={aboutStyles.portrait}>
           <img src={Portrait} />
         </div>
-        <div>
-          <div>
-            <h3>
-              Age :{" "}
-              <span style={{ fontWeight: "normal" }}>
-                {getAge("1986/02/05")} ans
-              </span>
-            </h3>
+        <div className={aboutStyles.card}>
+          <div className={aboutStyles.age}>
+            <h3>Age :</h3>
+            <p>{getAge("1986/02/05")} ans</p>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <h3 style={{ marginBottom: "10px" }}>Formations :</h3>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                marginBottom: "10px",
-              }}
-            >
+          <div className={aboutStyles.formation}>
+            <h3>Formations :</h3>
+            <div className={aboutStyles.wcs}>
               <img
                 src={wcs}
                 alt='logo de la Wild Code School'
                 height='40px'
                 width='100px'
               />
-              <span>du 12 Septembre 2020 au 12 Février 2021</span>
+              <span>du 11/09/2020 au 12/02/2021</span>
+              <p>
+                <b>Développeur Web</b>
+              </p>
               <b>Spécialité React/Node.js</b>
             </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                marginBottom: "10px",
-              }}
-            >
+            <div className={aboutStyles.oc}>
               <img
                 src={oc}
                 alt='logo openclassRooms'
@@ -78,6 +65,25 @@ export default function About() {
               <b>HTML/CSS/Bootstrap/JS/JQuery</b>
             </div>
           </div>
+        </div>
+        <div className={aboutStyles.description}>
+          <h3>Mes compétences :</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Redux</li>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>JWT</li>
+            <li>Firebase</li>
+            <li>Socket.io</li>
+            <li>RestAPI</li>
+            <li>Modélisation BDD</li>
+            <li>SQL (MySQL - Workbench)</li>
+            <li>TDD</li>
+            <li>Agile (Scrum)</li>
+            <li>Git (Github)</li>
+          </ul>
         </div>
       </div>
     </div>

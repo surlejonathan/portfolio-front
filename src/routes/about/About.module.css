@@ -6,18 +6,25 @@
   max-width: 800px;
 }
 
-.portrait {
+.portrait,
+.card {
   height: 100%;
   max-width: 300px;
-  flex: 1;
   margin: 1rem;
   flex-basis: 45%;
-  padding: 0.5rem;
   text-align: left;
   text-decoration: none;
-  border: 1px solid #eaeaea;
   transition: color 0.15s ease, border-color 0.15s ease;
-  box-shadow: 2px 5px 10px 0 rgba(0, 0, 0, 0.5);
+  /* box-shadow: 2px 5px 10px 0 rgba(0, 0, 0, 0.5); */
+}
+
+.portrait {
+  padding: 0.5rem;
+}
+
+.card {
+  padding: 1rem;
+  max-height: 280px;
 }
 
 .portrait img {
@@ -25,22 +32,34 @@
   width: 100%;
   height: 100%;
 }
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+
+.age {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .card h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+  margin: 0;
+  padding-right: 10px;
+  font-size: 1.2rem;
 }
 
 .card p {
   margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+}
+
+.wcs,
+.oc {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+}
+
+.description {
+  width: 100%;
+  height: 300px;
+  padding: 16px 90px;
 }
 
 @media (max-width: 600px) {
