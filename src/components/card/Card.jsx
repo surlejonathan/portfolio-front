@@ -28,7 +28,15 @@ const Card = ({
         <div className={cardStyles.cardBody}>
           <h3 className={cardStyles.cardTitle}>{title} </h3>
 
-          <p className={cardStyles.cardDescription}>{description}</p>
+          {!admin && (
+            <p className={cardStyles.cardDescription}>{description}</p>
+          )}
+          {admin && (
+            <textarea
+              className={cardStyles.cardDescription}
+              value={description}
+            />
+          )}
         </div>
         <Link to={path}>
           <p className={cardStyles.cardLink}>En savoir plus &rarr;</p>
