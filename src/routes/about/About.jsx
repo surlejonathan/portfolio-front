@@ -48,11 +48,13 @@ export default function About() {
                 height='40px'
                 width='100px'
               />
-              <span>du 11/09/2020 au 12/02/2021</span>
+              <span className={aboutStyles.dates}>
+                du 11/09/2020 au 12/02/2021
+              </span>
               <p>
-                <b>Développeur Web</b>
+                <b className={aboutStyles.details}>Développeur Web</b>
               </p>
-              <b>Spécialité React/Node.js</b>
+              <b className={aboutStyles.details}>Spécialité React/Node.js</b>
             </div>
             <div className={aboutStyles.oc}>
               <img
@@ -61,8 +63,10 @@ export default function About() {
                 height='25px'
                 width='200px'
               />
-              <span>depuis 2019</span>
-              <b>HTML/CSS/Bootstrap/JS/JQuery</b>
+              <span className={aboutStyles.dates}>depuis 2019</span>
+              <b className={aboutStyles.details}>
+                HTML/CSS/Bootstrap/JS/JQuery
+              </b>
             </div>
           </div>
         </div>
@@ -91,12 +95,17 @@ export default function About() {
             <li>capacités d'adaptation et d'apprentissage</li>
             <li>rigueur et goût du travail bien fait</li>
             <li>autonomie</li>
+            <li>curiosité</li>
           </ul>
           <h3>Mes passions : </h3>
           <ul>
             <li>piano : pratique en autodidacte depuis 2019</li>
             <li>sport: pratique du HIIT, 2 à 3 fois par semaine</li>
           </ul>
+          <h3>Mes disponibilités : </h3>
+          <p className={aboutStyles.dispo}>
+            <b>Immédiates</b> (alternance, stage, CDD/CDI)
+          </p>
         </div>
       </div>
     </div>

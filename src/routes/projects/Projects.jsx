@@ -14,6 +14,7 @@ export default function Projects() {
   const [projectList, setProjectList] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  console.log(projectList);
   const getProjects = () => {
     axios
       .get(`${process.env.REACT_APP_URL}/api/project`)
@@ -24,7 +25,6 @@ export default function Projects() {
   };
 
   const handleDelete = (project) => {
-    projectList.map((p) => console.log(p.idproject, project.idproject));
     axios
       .delete(`${process.env.REACT_APP_URL}/api/project/${project.idproject}`)
       .then((response) => console.log(response.data))
@@ -65,11 +65,12 @@ export default function Projects() {
           projectList.map((project, index) => (
             <Card
               key={index}
-              path='/projects'
+              path={project.project_url !== null ? project.project_url : ""}
               className={projectStyles.card}
               title={project.project_name}
               imgSrc={project.project_picture}
               description={project.project_presentation}
+              techno={project.project_techno}
               onClick={() => handleDelete(project)}
             />
           ))}

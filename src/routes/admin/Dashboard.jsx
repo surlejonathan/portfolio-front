@@ -15,6 +15,8 @@ export default function Dashboard() {
   const [projectName, setProjectName] = useState("");
   const [projectPicture, setProjectPicture] = useState("");
   const [projectPresentation, setProjectPresentation] = useState("");
+  const [projectUrl, setProjectUrl] = useState("");
+  const [projectTechno, setProjectTechno] = useState("");
 
   const uploadImage = (e) => {
     e.preventDefault();
@@ -41,6 +43,8 @@ export default function Dashboard() {
           project_name: projectName,
           project_picture: projectPicture,
           project_presentation: projectPresentation,
+          projet_url: projectUrl,
+          project_techno: projectTechno,
         })
         .then((response) => console.log(response.data))
         .then(() => history.push("/projects"))
@@ -68,7 +72,7 @@ export default function Dashboard() {
         className={`${formStyles.formLogin} ${cardStyles.card}`}
       >
         <div className='form-group'>
-          <label htmlFor='nameProject'>Nom du projet</label>
+          <label htmlFor='projectName'>Nom du projet</label>
           <input
             className={formStyles.input}
             type='text'
@@ -76,6 +80,17 @@ export default function Dashboard() {
             id='projectName'
             value={projectName}
             onChange={(e) => setProjectName(e.target.value)}
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='projectTechno'>Techno</label>
+          <input
+            className={formStyles.input}
+            type='text'
+            name='project_techno'
+            id='projectTechno'
+            value={projectTechno}
+            onChange={(e) => setProjectTechno(e.target.value)}
           />
         </div>
 
@@ -115,6 +130,17 @@ export default function Dashboard() {
             id='projectPresentation'
             value={projectPresentation}
             onChange={(e) => setProjectPresentation(e.target.value)}
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='projectUrl'>Lien du projet</label>
+          <input
+            className={formStyles.input}
+            type='text'
+            name='project_url'
+            id='projectUrl'
+            value={projectUrl}
+            onChange={(e) => setProjectUrl(e.target.value)}
           />
         </div>
         <div className='form-group'>

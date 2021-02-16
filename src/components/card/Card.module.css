@@ -44,14 +44,20 @@
 
 .card p {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 1.5;
 }
 
 .cardBody {
-  height: 134px;
+  height: 200px;
+  padding-top: 8px;
 }
 
+.cardLink {
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(63, 62, 62);
+}
 .cardLink:hover,
 .cardLink:focus,
 .cardLink:active {
@@ -60,6 +66,24 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-box-decoration-break: clone;
+}
+
+.cardDescription {
+  font-style: italic;
+  font-size: 1rem;
+  color: rgb(95, 92, 92);
+}
+
+.closeIcon {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.closeIcon:hover {
+  color: #72f;
 }
 
 @media (max-width: 600px) {

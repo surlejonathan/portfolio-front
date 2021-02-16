@@ -29,6 +29,20 @@
   margin-left: 10px;
 }
 
+.card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.dates {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.details {
+  font-size: 1rem;
+}
+
 .portrait img {
   object-fit: contain;
   width: 100%;
@@ -38,7 +52,7 @@
 .age {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .info {
@@ -48,7 +62,7 @@
 .info h3 {
   margin: 0;
   padding-right: 10px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .info span {
@@ -65,12 +79,22 @@
   margin: 16px 0;
 }
 
+ul {
+  margin-top: 8px;
+}
 ul li {
   padding: 4px;
+  text-align: justify;
 }
+
+.dispo {
+  margin-top: 4px;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
+    margin-bottom: 80px;
   }
 }
