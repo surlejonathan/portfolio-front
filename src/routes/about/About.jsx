@@ -33,13 +33,13 @@ export default function About() {
         <div className={aboutStyles.portrait}>
           <img src={Portrait} />
         </div>
-        <div className={aboutStyles.card}>
+        <div className={aboutStyles.info}>
           <div className={aboutStyles.age}>
             <h3>Age :</h3>
             <p>{getAge("1986/02/05")} ans</p>
           </div>
 
-          <div className={aboutStyles.formation}>
+          <div>
             <h3>Formations :</h3>
             <div className={aboutStyles.wcs}>
               <img
@@ -66,7 +66,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className={aboutStyles.description}>
+        <div className={aboutStyles.card}>
           <h3>Mes compétences :</h3>
           <ul>
             <li>JavaScript</li>
@@ -83,6 +83,19 @@ export default function About() {
             <li>TDD</li>
             <li>Agile (Scrum)</li>
             <li>Git (Github)</li>
+          </ul>
+        </div>
+        <div className={aboutStyles.card}>
+          <h3>Mes atouts : </h3>
+          <ul>
+            <li>capacités d'adaptation et d'apprentissage</li>
+            <li>rigueur et goût du travail bien fait</li>
+            <li>autonomie</li>
+          </ul>
+          <h3>Mes passions : </h3>
+          <ul>
+            <li>piano : pratique en autodidacte depuis 2019</li>
+            <li>sport: pratique du HIIT, 2 à 3 fois par semaine</li>
           </ul>
         </div>
       </div>

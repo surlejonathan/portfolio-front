@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: center;
   max-width: 600px;
+  width: 100%;
+  padding: 24px;
 }
 
 .formLogin input,
@@ -14,8 +16,8 @@
   padding: 16px;
   border-radius: 10px;
   outline: none;
-  border-style: solid;
   cursor: pointer;
+  border: 2px solid gray;
 }
 
 .formLogin textarea {
@@ -24,8 +26,8 @@
 }
 
 .formLogin input:focus,
-.formLogin textarea {
-  border-color: black;
+.formLogin textarea:focus {
+  border-color: #72f;
 }
 
 .formLogin input[type="file"] {

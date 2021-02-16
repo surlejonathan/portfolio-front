@@ -1,5 +1,6 @@
 import headerStyles from "./Header.module.css";
 import { SiGithub, SiLinkedin } from "react-icons/si";
+import { ImProfile } from "react-icons/im";
 
 const Header = () => {
   return (
@@ -26,6 +27,15 @@ const Header = () => {
           <SiLinkedin
             className={`${headerStyles.social} ${headerStyles.linkedIn}`}
           />
+        </a>
+        <a
+          href='https://drive.google.com/file/d/1DpD_c2ivYLufNNNmBYbOesFLJkr3grXJ/view?usp=sharing'
+          target='_blank'
+          rel='noreferrer'
+          title='télécharger CV'
+          download
+        >
+          <ImProfile />
         </a>
       </div>
     </div>
