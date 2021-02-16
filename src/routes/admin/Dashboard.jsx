@@ -43,7 +43,7 @@ export default function Dashboard() {
           project_name: projectName,
           project_picture: projectPicture,
           project_presentation: projectPresentation,
-          projet_url: projectUrl,
+          project_url: projectUrl,
           project_techno: projectTechno,
         })
         .then((response) => console.log(response.data))
