@@ -88,6 +88,18 @@
   color: #72f;
 }
 
+@media (max-width: 320px) {
+  .cardBody {
+    max-height: 235px;
+  }
+}
+
+@media (max-width: 400px) {
+  .cardBody {
+    max-height: 250px;
+  }
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -96,9 +108,5 @@
 
   .card {
     max-height: 350px;
-  }
-
-  .cardBody {
-    max-height: 250px;
   }
 }

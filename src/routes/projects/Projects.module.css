@@ -59,7 +59,7 @@
 .card p {
   margin: 0 10px;
   padding: 0 10px;
-  font-size: 1.1rem;
+
   line-height: 1.5;
 }
 
@@ -69,6 +69,20 @@
   padding: 8px;
 }
 
+@media (max-width: 320px) {
+  .card {
+    max-height: 450px;
+  }
+  .card p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 321px) {
+  .card p {
+    font-size: 1.2rem;
+  }
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;
