@@ -26,6 +26,7 @@
 
 .cardImage {
   height: 228px;
+  margin-bottom: 8px;
 }
 
 .card img {
@@ -55,22 +56,31 @@
 
 .cardBody {
   height: 100%;
-  padding-top: 8px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.cardLink {
+.cardLink,
+.cardLinkDisabled {
   font-weight: bold;
   font-style: italic;
-  color: rgb(63, 62, 62);
+  transition: all 0.3s ease-in-out;
 }
 .cardLink:hover,
 .cardLink:focus,
 .cardLink:active {
-  background: #72f linear-gradient(145deg, #72f, #c1b);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-box-decoration-break: clone;
+  transform: scale(1.05);
+}
+
+.cardLink {
+  color: #72f;
+}
+.cardLinkDisabled {
+  color: rgb(63, 62, 62);
 }
 
 .cardDescription {
@@ -109,7 +119,7 @@
 
 @media (max-width: 400px) {
   .cardBody {
-    height: 250px;
+    height: 210px;
   }
 }
 
@@ -119,7 +129,7 @@
   }
 
   .cardBody {
-    height: 220px;
+    height: 180px;
   }
 }
 

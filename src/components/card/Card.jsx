@@ -26,9 +26,8 @@ const Card = ({
         <div className={cardStyles.cardImage}>
           <img src={imgSrc} alt={alt} />
         </div>
+        <h3 className={cardStyles.cardTitle}>{title} </h3>
         <div className={cardStyles.cardBody}>
-          <h3 className={cardStyles.cardTitle}>{title} </h3>
-
           <p>{description}</p>
           <p className={cardStyles.cardDescription}>{techno}</p>
         </div>
@@ -37,7 +36,9 @@ const Card = ({
             <p className={cardStyles.cardLink}>Lien vers le projet &rarr;</p>
           </a>
         ) : (
-          <p className={cardStyles.cardLink}>Lien prochainement disponible</p>
+          <p className={cardStyles.cardLinkDisabled}>
+            Lien prochainement disponible
+          </p>
         )}
 
         {admin && (
