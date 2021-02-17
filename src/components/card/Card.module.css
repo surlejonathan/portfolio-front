@@ -50,7 +50,7 @@
 }
 
 .cardBody {
-  max-height: 200px;
+  max-height: 220px;
   height: 100%;
   padding-top: 8px;
 }
@@ -96,5 +96,9 @@
 
   .card {
     max-height: 350px;
+  }
+
+  .cardBody {
+    max-height: 250px;
   }
 }
