@@ -71,7 +71,7 @@
 
 @media (max-width: 320px) {
   .card {
-    max-height: 450px;
+    max-height: 480px;
   }
   .card p {
     font-size: 1rem;
@@ -80,7 +80,7 @@
 
 @media (min-width: 321px) {
   .card p {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 }
 @media (max-width: 600px) {

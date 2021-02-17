@@ -24,6 +24,10 @@
   box-shadow: 2px 5px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
+.cardImage {
+  height: 228px;
+}
+
 .card img {
   width: 100%;
 }
@@ -50,7 +54,6 @@
 }
 
 .cardBody {
-  max-height: 220px;
   height: 100%;
   padding-top: 8px;
 }
@@ -90,13 +93,33 @@
 
 @media (max-width: 320px) {
   .cardBody {
-    max-height: 235px;
+    height: 235px;
+  }
+
+  .cardImage {
+    height: 160px;
+  }
+}
+
+@media (min-width: 321px) {
+  .cardImage {
+    height: 200px;
   }
 }
 
 @media (max-width: 400px) {
   .cardBody {
-    max-height: 260px;
+    height: 250px;
+  }
+}
+
+@media (min-width: 401px) {
+  .cardImage {
+    height: 228px;
+  }
+
+  .cardBody {
+    height: 220px;
   }
 }
 
