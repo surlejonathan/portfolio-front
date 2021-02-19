@@ -56,8 +56,6 @@ export default function Projects() {
   const handlers = useSwipeable({
     onSwipedLeft: () => handleNext(),
     onSwipedRight: () => handlePrev(),
-    preventDefaultTouchmoveEvent: true,
-    trackMouse: true,
   });
 
   useEffect(() => {
@@ -80,11 +78,11 @@ export default function Projects() {
         {currentProject + 1} / {projectList.length}
       </div>
       <Carousel>
+        <FaChevronLeft className={projectStyles.prev} onClick={handlePrev} />
+        {loading && (
+          <Loader type='TailSpin' color='#72f' height={100} width={100} />
+        )}
         <div {...handlers}>
-          <FaChevronLeft className={projectStyles.prev} onClick={handlePrev} />
-          {loading && (
-            <Loader type='TailSpin' color='#72f' height={100} width={100} />
-          )}
           {projectList &&
             projectList
               .map((project, index) => (
@@ -100,8 +98,8 @@ export default function Projects() {
                 />
               ))
               .filter((p) => p.key == currentProject)}
-          <FaChevronRight className={projectStyles.next} onClick={handleNext} />
         </div>
+        <FaChevronRight className={projectStyles.next} onClick={handleNext} />
       </Carousel>
 
       <div
