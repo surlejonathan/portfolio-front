@@ -74,38 +74,46 @@ export default function Projects() {
       <Navbar />
       <Header />
       <h1>Mes Projets</h1>
-      <div>
-        {currentProject + 1} / {projectList.length}
-      </div>
-      <Carousel>
-        <FaChevronLeft className={projectStyles.prev} onClick={handlePrev} />
-        {loading && (
-          <Loader type='TailSpin' color='#72f' height={100} width={100} />
-        )}
-        <div {...handlers}>
-          {projectList &&
-            projectList
-              .map((project, index) => (
-                <Card
-                  key={index}
-                  path={project.project_url !== null ? project.project_url : ""}
-                  className={projectStyles.card}
-                  title={project.project_name}
-                  imgSrc={project.project_picture}
-                  description={project.project_presentation}
-                  techno={project.project_techno}
-                  onClick={() => handleDelete(project)}
-                />
-              ))
-              .filter((p) => p.key == currentProject)}
+      {!loading && (
+        <div>
+          {currentProject + 1} / {projectList.length}
         </div>
-        <FaChevronRight className={projectStyles.next} onClick={handleNext} />
-      </Carousel>
+      )}
+      {loading && (
+        <Loader
+          type='TailSpin'
+          color='#72f'
+          height={100}
+          width={100}
+          style={{ paddingTop: loading && "10%" }}
+        />
+      )}
+      {!loading && (
+        <Carousel>
+          <FaChevronLeft className={projectStyles.prev} onClick={handlePrev} />
 
-      <div
-        className={projectStyles.grid}
-        style={{ paddingTop: loading && "10%" }}
-      ></div>
+          <div {...handlers}>
+            {projectList &&
+              projectList
+                .map((project, index) => (
+                  <Card
+                    key={index}
+                    path={
+                      project.project_url !== null ? project.project_url : ""
+                    }
+                    className={projectStyles.card}
+                    title={project.project_name}
+                    imgSrc={project.project_picture}
+                    description={project.project_presentation}
+                    techno={project.project_techno}
+                    onClick={() => handleDelete(project)}
+                  />
+                ))
+                .filter((p) => p.key == currentProject)}
+          </div>
+          <FaChevronRight className={projectStyles.next} onClick={handleNext} />
+        </Carousel>
+      )}
     </div>
   );
 }
