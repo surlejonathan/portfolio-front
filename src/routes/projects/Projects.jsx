@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Card from "../../components/card/Card";
 import Navbar from "../../components/navbar/Navbar";
@@ -7,14 +6,15 @@ import Header from "../../components/header/Header";
 import MetaTags from "react-meta-tags";
 import Loader from "react-loader-spinner";
 import projectStyles from "../projects/Projects.module.css";
+import Carousel from "../../components/carousel/Carousel";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useSwipeable } from "react-swipeable";
 
 export default function Projects() {
-  let history = useHistory();
-
   const [projectList, setProjectList] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [currentProject, setCurrentProject] = useState(0);
 
-  console.log(projectList);
   const getProjects = () => {
     axios
       .get(`${process.env.REACT_APP_URL}/api/project`)
@@ -33,10 +33,32 @@ export default function Projects() {
           projectList.filter((p) => project.idproject !== p.idproject)
         )
       )
+      .then(() => setCurrentProject(0))
 
       .catch((err) => console.error(err));
     return projectList;
   };
+
+  const handlePrev = () => {
+    setCurrentProject(
+      currentProject <= 0
+        ? currentProject - 1 + projectList.length
+        : currentProject - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentProject(
+      currentProject < projectList.length - 1 ? currentProject + 1 : 0
+    );
+  };
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleNext(),
+    onSwipedRight: () => handlePrev(),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
 
   useEffect(() => {
     setLoading(true);
@@ -54,27 +76,38 @@ export default function Projects() {
       <Navbar />
       <Header />
       <h1>Mes Projets</h1>
+      <div>
+        {currentProject + 1} / {projectList.length}
+      </div>
+      <Carousel>
+        <div {...handlers}>
+          <FaChevronLeft className={projectStyles.prev} onClick={handlePrev} />
+          {loading && (
+            <Loader type='TailSpin' color='#72f' height={100} width={100} />
+          )}
+          {projectList &&
+            projectList
+              .map((project, index) => (
+                <Card
+                  key={index}
+                  path={project.project_url !== null ? project.project_url : ""}
+                  className={projectStyles.card}
+                  title={project.project_name}
+                  imgSrc={project.project_picture}
+                  description={project.project_presentation}
+                  techno={project.project_techno}
+                  onClick={() => handleDelete(project)}
+                />
+              ))
+              .filter((p) => p.key == currentProject)}
+          <FaChevronRight className={projectStyles.next} onClick={handleNext} />
+        </div>
+      </Carousel>
+
       <div
         className={projectStyles.grid}
         style={{ paddingTop: loading && "10%" }}
-      >
-        {loading && (
-          <Loader type='TailSpin' color='#72f' height={100} width={100} />
-        )}
-        {projectList &&
-          projectList.map((project, index) => (
-            <Card
-              key={index}
-              path={project.project_url !== null ? project.project_url : ""}
-              className={projectStyles.card}
-              title={project.project_name}
-              imgSrc={project.project_picture}
-              description={project.project_presentation}
-              techno={project.project_techno}
-              onClick={() => handleDelete(project)}
-            />
-          ))}
-      </div>
+      ></div>
     </div>
   );
 }

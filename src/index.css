@@ -61,12 +61,13 @@ html[data-theme="light"] {
   --background-button: rgb(255, 255, 255);
   --background-button-hover: #72f linear-gradient(145deg, #72f, #c1b);
   --color-button-hover: rgb(255, 255, 255);
+  --color-carouselButton: rgba(131, 58, 180, 0.5);
 }
 
 /* DARK MODE */
 
 html[data-theme="dark"] {
-  --color: rgb(255, 255, 255);
+  --color: rgb(231, 222, 222);
   --bgHomeButton: rgb(255, 255, 255);
   --colorHomeButton: rgb(1, 0, 1);
   --colorHomeButton-hover: rgb(255, 255, 255);
@@ -83,6 +84,7 @@ html[data-theme="dark"] {
   --background-button: #72f linear-gradient(145deg, #72f, #c1b);
   --background-button-hover: rgb(255, 255, 255);
   --color-button-hover: #72f;
+  --color-carouselButton: rgba(131, 58, 180, 0.9);
 }
 
 a {

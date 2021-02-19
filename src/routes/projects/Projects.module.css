@@ -65,6 +65,30 @@
   padding: 8px;
 }
 
+.prev,
+.next {
+  font-size: 1.8rem;
+  position: absolute;
+  top: 50%;
+  z-index: 1001;
+  color: var(--color-carouselButton);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+
+.prev:hover,
+.next:hover {
+  font-size: 2.5rem;
+}
+
 @media (max-width: 320px) {
   .card {
     max-height: 480px;

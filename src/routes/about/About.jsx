@@ -70,6 +70,7 @@ export default function About() {
             </div>
           </div>
         </div>
+
         <div className={aboutStyles.card}>
           <h3>Mes compétences :</h3>
           <ul>
