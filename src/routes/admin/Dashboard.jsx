@@ -17,6 +17,7 @@ export default function Dashboard() {
   const [projectPresentation, setProjectPresentation] = useState("");
   const [projectUrl, setProjectUrl] = useState("");
   const [projectTechno, setProjectTechno] = useState("");
+  const [projectDate, setProjectDate] = useState("");
 
   const uploadImage = (e) => {
     e.preventDefault();
@@ -45,14 +46,11 @@ export default function Dashboard() {
           project_presentation: projectPresentation,
           project_url: projectUrl,
           project_techno: projectTechno,
+          project_date: projectDate,
         })
         .then((response) => console.log(response.data))
         .then(() => history.push("/projects"))
         .catch((err) => console.log(err));
-
-      setProjectName("");
-      setProjectPicture("");
-      setProjectPresentation("");
     }
   };
 
@@ -80,6 +78,17 @@ export default function Dashboard() {
             id='projectName'
             value={projectName}
             onChange={(e) => setProjectName(e.target.value)}
+          />
+        </div>
+        <div className='form-group'>
+          <label htmlFor='projectDate'>Date</label>
+          <input
+            className={formStyles.input}
+            type='date'
+            name='project_date'
+            id='projectDate'
+            value={projectDate}
+            onChange={(e) => setProjectDate(e.target.value)}
           />
         </div>
         <div className='form-group'>

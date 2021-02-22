@@ -63,6 +63,7 @@ export default function Projects() {
     getProjects();
   }, []);
 
+  console.log(projectList);
   return (
     <div className='main'>
       <MetaTags>
