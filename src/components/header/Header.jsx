@@ -29,7 +29,7 @@ const Header = () => {
           />
         </a>
         <a
-          href='https://drive.google.com/file/d/1E7NLrQ1P3cI9mYbXCm0R8MU98Yug0plD/view?usp=sharing'
+          href='https://drive.google.com/file/d/1NPbvOSHhdSOGuODVerrG4OiBk0tbjWo9/view?usp=sharing'
           target='_blank'
           rel='noreferrer'
           title='télécharger CV'
